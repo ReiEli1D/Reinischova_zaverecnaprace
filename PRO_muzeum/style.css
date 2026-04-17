@@ -1,0 +1,789 @@
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f5f5f5;
+}
+
+.section{
+  padding:60px 5vw;
+}
+.section_tab{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.titulek{
+  margin-top: 350px;
+  margin-right: 175px;
+  text-align: left;
+}
+
+h2{
+  text-align: center;
+  font-weight:800;
+  color: whitesmoke;
+}
+
+/*NAVBAR*/
+
+/* Tato barva se aplikuje, když budeš v dané sekci */
+.navbar-nav .nav-link.active {
+  color: #b1b1b1 !important; 
+  font-weight: 800;
+  border-bottom: 2px solid #6e6e6e;
+}
+
+.content {
+  padding: 16px;
+}
+
+.logo-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #666;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link {
+  margin: 0 5px;
+  font-weight: 500;
+}
+
+.img_hero{
+  margin-top: -15px;
+}
+
+/* HERO SECTION*/
+.hero{
+  background-color: rgb(255, 255, 255);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  color: rgb(0, 0, 0);
+}
+
+.img_hero{
+  height:550px;
+  background:#ddd;
+  border-radius:30px 5px;
+}
+
+/* AKTUALITY  */
+.news{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+#aktuality{
+   background-color: #000;
+   color: white;
+}
+
+.news-item{
+  height:140px;
+  background:#ddd;
+  border-radius:15px 5px;
+}
+
+
+
+/* REZERVACE CAROUSEL */
+
+
+.booking-full-width {
+    background-color: #ffffff;
+    padding: 10px 0 10px 0; 
+    width: 100%;
+    overflow: hidden;
+}
+
+.booking-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    gap: 15px; 
+    padding: 0 20px;
+}
+
+/* Carousel */
+.carousel-side {
+    flex: 3;
+    position: relative; 
+    display: flex;
+    align-items: center;
+}
+
+.carousel-clip {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Karta */
+.carousel-card {
+    min-width: 28%;
+    height: 500px;
+    box-sizing: border-box;
+    border-right: 2px solid #000;
+    background: rgba(83, 83, 83, 0.445); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    border-radius: 5px;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-gradient {
+    height: 450px;
+    background: linear-gradient(to bottom, #aedce8, #7eb444);
+}
+
+.card-body {
+    padding: 30px 20px;
+    text-align: center;
+    color: black;
+}
+
+.card-body h4 { font-weight: 800; font-size: 1.6rem; margin: 0; }
+.card-body .date { color: #666; margin-bottom: 15px; }
+.card-body .desc { font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+
+.btn-more {
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Šipky přes karty */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev { left: -10px; } /* Mírně vykukují nebo jsou na kraji */
+.next { right: -10px; }
+
+/* Rezervace Panel */
+.reservation-side {
+    flex: 1;
+    background-color: #ccccccdc;
+    display: flex;
+    opacity: 70%;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.reservation-content {
+    width: 100%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.reservation-content h2 { font-weight: 900; letter-spacing: 1px; margin: 0; }
+.res-line { width: 100%; height: 2px; background: #888; margin: 15px 0 30px 0; }
+
+.res-field {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: #a1a1a1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.res-btn {
+    width: 100%;
+    padding: 18px;
+    border-radius: 35px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/*  RECENZE */
+.reviews{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top: 30px;
+  font-family: 'Times New Roman', Times, serif;
+}
+#recenze{
+  background-color: #000;
+}
+.review{
+  width:300px;
+  height:450px;
+  background:#ddd;
+  border-radius:140px 140px 10px 10px;
+}
+
+/*TABS*/
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 40px;
+}
+
+/* HORNÍ ČÁRA */
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  border-bottom: 2px solid #888;         
+  width: 96vw; 
+  left: 50%;
+  transform: translateX(-50%); /* aby byla čára na středu*/
+  margin: 30px 0;
+}
+
+/* HORNÍ ČÁRA */
+.tabs::before {
+  content: "";
+  position: absolute;
+  top: -5px; /* vzdálenost nad taby */
+  left: 0;
+  width: 100%;   
+  height: 2px;
+  background: #888;
+}
+
+/* TABY */
+.tab {
+  cursor: pointer; /*změna kurzoru při najeti myši na ty polička*/
+  position: relative;
+  padding: 10px 20px; /* důležité pro šířku */
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+
+  bottom: -1px;   /* přesně na šedou čáru */
+  left: 0;
+  width: 100%;    /* přes celou šířku tabu */
+
+  height: 2px;
+  background: black;
+}
+
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+
+/*KONTAKTY*/
+.kontakt-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* SPOLEČNÉ VLASTNOSTI */
+.card {
+  background: #e0e0e0;
+  border-radius: 20px;
+  padding: 25px;
+  height: 100%;
+}
+
+/* HORNÍ ŘADA */
+.row-top {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr; /* Fotka je menší (1/3 šířky) */
+  gap: 20px;
+}
+
+.photo-box {
+  height: 100%;
+  min-height: 250px;
+}
+
+.img-fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.info-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.c-box {
+  background: #d0d0d0;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* DOLNÍ ŘADA (NEWSLETTER + FORMULÁŘ) */
+.row-bottom {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr; /* Newsletter lícuje s fotkou nahoře */
+  gap: 20px;
+}
+
+.newsletter-square .card {
+  aspect-ratio: 1 / 1; /* ČTVERCOVÝ NEWSLETTER */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* FORMULÁŘ */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.full-w { grid-column: span 2; }
+
+input, textarea {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background: #85848483;
+}
+
+.btn-black {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.btn-wrap { text-align: right; margin-top: 10px; }
+
+/*kde jsme section*/
+.kde-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Mapa je o něco širší než text */
+  gap: 20px;
+  align-items: stretch; /* Obě karty budou stejně vysoké */
+}
+
+.kde-grid .info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vycentruje text vertikálně */
+  gap: 30px;
+}
+
+.kde-grid h3 {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.kde-grid p {
+  margin: 0;
+  color: #444;
+}
+
+/* STYL MAPY */
+.map-card {
+  padding: 0 !important; /* Mapa vyplní celou kartu bez okrajů */
+  overflow: hidden;
+}
+
+.map-placeholder {
+  width: 890px;
+  height: 400px;
+  min-height: 350px; /* Minimální výška na desktopu */
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+
+/* ================= FAQ ================= */
+.faq-item{
+  border-bottom:1px solid #aaa;
+  padding:10px;
+}
+
+.faq-q{
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.faq-a{display:none}
+
+
+
+
+
+/*FOOTER*/
+.footer {
+  background: #000000;
+  padding: 30px;
+
+}
+
+.footer-container {
+  width: 100%;
+}
+
+/* TOP */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* MENU */
+.footer-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-menu a {
+  text-decoration: none;
+  color: rgb(252, 252, 252);
+  font-weight: 600;
+}
+
+/* NEWSLETTER */
+.newsletter_footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: whitesmoke;
+}
+
+.newsletter_footer span {
+  font-weight: 780;
+}
+
+/* INPUT + BUTTON */
+.newsletter-box {
+  display: flex;
+ 
+}
+
+.newsletter-box input {
+  width: 200px;
+  padding: 2px;
+  border: 1px solid #888;
+  border-right: none;
+}
+
+.newsletter-box button {
+  padding: 6px 12px;
+  background: red;
+  color: whitesmoke;
+  border: none;
+}
+
+/* LINE */
+.footer-line {
+  width: 96vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  background: #666;
+  margin-top: 20px;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  
+}
+
+/* ICONS */
+.social-icons img {
+  width: 28px;
+  margin-left: 10px;
+}
+
+
+
+
+
+/*Responzivita*/
+/* TABLET */
+@media (max-width: 992px) {
+  .section {
+    padding: 40px 30px;
+  }
+  /* HERO */
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .img_hero {
+    height: 300px;
+  }
+  /* NEWS */
+  .news {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .carousel-card { 
+    min-width: 50%; 
+  }
+  /* REVIEWS */
+  .reviews {
+    flex-wrap: wrap;
+    gap: 20px;
+   
+  }
+  .review {
+    width: 55%;
+    height: 500px;
+    border-radius:190px 190px 10px 10px;
+  }
+  /* KONTAKTY */
+  .kontakt-grid {
+    grid-template-columns: 1fr; /* Jeden sloupec pod sebou */
+  }
+
+  .contact-boxes {
+    flex-direction: column; /* Boxíky pod sebou */
+  }
+
+  .photo-container {
+    height: 300px;
+  }
+  .kde-grid {
+    grid-template-columns: 1fr; /* Text a mapa pod sebou */
+  }
+  
+  .map-placeholder {
+    min-height: 300px;
+  }
+
+  .newsletter-overlay {
+    width: 90%;
+    top: 20px;
+  }
+
+}
+
+
+/* Na mobil */
+@media (max-width: 420px) {
+
+  .section {
+    padding: 25px 15px;
+  }
+
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  p  { font-size: 14px; }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .img_hero {
+    height: 200px;
+  }
+
+  /* ===== AKTUALITY ===== */
+  .news {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+
+
+  /* ===== RECENZE ===== */
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .review {
+    width: 80%;
+    height: 340px;
+    border-radius: 140px 140px 10px 10px;
+  }
+
+  /* ===== TABS ===== */
+  .tabs {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tab {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* ===== KONTAKTY ===== */
+  .section {
+    padding: 30px 20px; /* Menší padding na mobilech */
+  }
+  
+  .form-row {
+    flex-direction: column; /* Inputy email a tel pod sebou na malém mobilu */
+  }
+
+  .btn-send {
+    width: 100%; /* Tlačítko na celou šířku */
+  }
+  /* NEWSLETTER */
+  .newsletter {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .newsletter input {
+    width: 100%;
+  }
+
+  .newsletter button {
+    width: 100%;
+  }
+
+  .kontakt-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 0 15px;
+    justify-items: center;
+  }
+  .booking-wrapper { 
+    flex-direction: column; 
+  }
+  .carousel-card { 
+    min-width: 100%; 
+    border-right: none; 
+  }
+  .reservation-side {
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+.kde-grid .info-card {
+    padding: 20px;
+    text-align: center; /* Na malém mobilu text doprostřed */
+  }
+  
+  .kontakt-grid > div > div[style*="display:flex"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .kontakt-grid > div > div[style*="display:flex"] > div {
+    width: 100% !important;
+    max-width: 260px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  }
+
+
+
+  /* FORM */
+  .form input,
+  .form textarea,
+  .form button {
+    width: 100%;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter_footer {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .newsletter-box input {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+}

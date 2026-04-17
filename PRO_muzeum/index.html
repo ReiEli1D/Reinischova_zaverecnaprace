@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Šachové muzeum</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+ 
+  <!--
+  Dodělat: aktuality, recenze 
+  Přidat: PHP, informace o výstavách, countdown do nové výstavy, obrázky
+  Opravit: responzivitu, carousel, mapu v casti kde jsme, a designove prvky v te casti, aby se rozklikl faq když kliknu v navbaru
+  
+  Zlepšit design webovek
+  -->
+
+
+
+<!-- NAVBAR-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="navbar">
+  <div class="container">
+
+    <!-- toggle pro mobil -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+      <!-- LEVÁ ČÁST -->
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#aktuality">Aktuality</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#rezervace">Výstavy</a>
+        </li>
+      </ul>
+
+      <!-- LOGO -->
+      <a class="navbar-brand mx-4 logo-circle" href="#home">
+        logo <!--Figurka kone-->
+      </a>
+
+      <!-- PRAVÁ ČÁST -->
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#recenze">Recenze</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#kontakt">Kontakt</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION-->
+<section id="home" class="section hero">
+  <div class="titulek">
+    <h1>KRÁLOVSTVÍ TAHŮ</h1>
+    <p>Vstupte do světa šachu, kde se setkává historie, strategie a umění myšlení. Objevte jedinečné exponáty, slavné partie i příběhy mistrů, kteří změnili dějiny této nadčasové hry.</p>
+  </div>
+  <div class="img_hero"></div>
+</section>
+<!-- HERO SECTION-->
+
+<!-- AKTUALITY-->
+<section class="section" id="aktuality">
+  <h2>AKTUALITY</h2>
+  <div class="news">
+    <div class="news-item"></div>
+    <div class="news-item"></div>
+    <div class="news-item"></div>
+  </div>
+</section>
+<!-- AKTUALITY-->
+
+
+
+
+
+    <!-- CAROUSEL -->
+    <section id="rezervace" class="booking-full-width">
+  <div class="booking-wrapper">
+    
+    <div class="carousel-side">
+      <button class="carousel-arrow prev" onclick="moveSlide(-1)">&#8592;</button> ><!--&#8592  vyrenderuje levou šipku -->
+      
+      <div class="carousel-clip">
+        <div class="carousel-track" id="track">
+          <div class="carousel-card">
+            <div class="card-img-gradient"></div>
+            <div class="card-body">
+              <h4>Výstava</h4>
+              <p class="date">Datum</p>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.</p>
+              <button class="btn-more">VÍCE</button>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <div class="card-img-gradient"></div>
+            <div class="card-body">
+              <h4>Výstava</h4>
+              <p class="date">Datum</p>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.</p>
+              <button class="btn-more">VÍCE</button>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <div class="card-img-gradient"></div>
+            <div class="card-body">
+              <h4>Výstava</h4>
+              <p class="date">Datum</p>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.</p>
+              <button class="btn-more">VÍCE</button>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <div class="card-img-gradient"></div>
+            <div class="card-body">
+              <h4>Výstava</h4>
+              <p class="date">Datum</p>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.</p>
+              <button class="btn-more">VÍCE</button>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <div class="card-img-gradient"></div>
+            <div class="card-body">
+              <h4>Výstava</h4>
+              <p class="date">Datum</p>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.</p>
+              <button class="btn-more">VÍCE</button>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <div class="card-img-gradient"></div>
+            <div class="card-body">
+              <h4>Výstava</h4>
+              <p class="date">Datum</p>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.</p>
+              <button class="btn-more">VÍCE</button>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <div class="card-img-gradient"></div>
+            <div class="card-body">
+              <h4>Výstava</h4>
+              <p class="date">Datum</p>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.</p>
+              <button class="btn-more">VÍCE</button>
+            </div>
+          </div>
+          <div class="carousel-card">
+            <div class="card-img-gradient"></div>
+            <div class="card-body">
+              <h4>Výstava</h4>
+              <p class="date">Datum</p>
+              <p class="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero.</p>
+              <button class="btn-more">VÍCE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-arrow next" onclick="moveSlide(1)">&#8594;</button> <!--&#8594 vyrenderuje pravou šipku: → -->
+
+
+    </div>
+
+    <div class="reservation-side">
+      <div class="reservation-content">
+        <h2>REZERVACE</h2>
+        <div class="res-line"></div>
+        <input type="email" placeholder="e-mail" class="res-field" >
+        <button class="res-btn">PŘEJÍT K REZERVACI</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- ================= RECENZE ================= -->
+<section class="section" id="recenze">
+  <h2 style="color: whitesmoke;"><strong> RECENZE</strong></h2>
+  <div class="reviews">
+    <div class="review"></div>
+    <div class="review"></div>
+    <div class="review"></div>
+    <div class="review"></div>
+    <div class="review"></div>
+  </div>
+</section>
+
+
+
+
+
+<section id="kontakt" class="section_tab">
+
+  <!-- TABY -->
+  <div class="tabs">
+    <div class="tab active" onclick="openTab('kontakty',this)">Kontakty</div>
+    <div class="tab" onclick="openTab('kde',this)">Kde jsme</div>
+    <div class="tab" onclick="openTab('faq',this)">FAQ</div>
+  </div>
+
+  <!-- KONTAKTY -->
+  <div id="kontakty" class="tab-content active">
+    <div class="kontakt-container">
+      
+      <div class="row-top">
+        <div class="photo-box">
+          <img src="./pictures/photo_onas.jpg" class="img-fit">
+        </div>
+        <div class="info-side">
+          <div class="card about-card">
+            <h3>O NÁS</h3>
+            <p>Krátký popis projektu...</p>
+          </div>
+          <div class="contactus"> <h3>Kontakty</h3></div>
+          <div class="contact-row">
+            <div class="c-box">Email</div>
+            <div class="c-box">Telefon</div>
+            <div class="c-box">Sociální sítě</div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="section-line1" style="width: 98%;height: 2px;background-color: #888;margin: 3px 5px;  "></div>
+
+      <div class="row-bottom">
+        <div class="newsletter-square">
+          <div class="card n-card">
+            <h3>NÁŠ NEWSLETTER</h3>
+            <p>Text newsletteru...</p>
+            <input placeholder="e-mail">
+            <button class="btn-black">odeslat</button>
+          </div>
+        </div>
+        <div class="form-side">
+          <div class="card f-card">
+            <h3>NAPIŠTE NÁM</h3>
+            <div class="form-grid">
+              <input placeholder="e-mail">
+              <input placeholder="telefon">
+              <input placeholder="jméno" class="full-w">
+              <textarea placeholder="zpráva" class="full-w"></textarea>
+            </div>
+            <div class="btn-wrap">
+              <button class="btn-black">odeslat</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KDE JSME -->
+  <div id="kde" class="tab-content">
+    <div class="kde-grid">
+      <div class="card info-card">
+        <div class="info-item">
+          <h3>Adresa</h3>
+          <p>Praha, Česká republika</p>
+        </div>
+        <div class="info-item">
+          <h3>Otevírací doba</h3>
+          <p>Po–Pá: 9:00 – 18:00</p>
+          <p>So–Ne: Zavřeno</p>
+        </div>
+      </div>
+
+      <div class="card map-card">
+        <div class="map-placeholder">
+          <span><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2152.7768155385547!2d14.424003149767042!3d50.08446126925242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1scs!2scz!4v1776370672591!5m2!1scs!2scz" width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+<div id="faq" class="tab-content">
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Jak funguje rezervace? 
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>TRezervace probíhá online.</strong>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Jaká je otevírací doba?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>Po–Pá 9:00–18:00</strong> 
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Accordion Item #3
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</section>
+
+<!--FOOTER-->
+
+<footer class="footer">
+  <div class="container-fluid px-4">
+
+    <!-- HORNÍ ŘÁDEK -->
+    <div class="footer-top">
+
+      <!-- MENU -->
+      <div class="footer-menu">
+        <a href="#rezervace">Výstavy</a>
+        <a href="#aktuality">Aktuality</a>
+        <a href="#kontakt">O nás</a>
+        <a href="#kde">Kde jsme</a>
+      </div>
+
+      <!-- NEWSLETTER -->
+      <div class="newsletter_footer">
+        <span>NEWSLETTER</span>
+
+        <div class="newsletter-box">
+          <input type="email" placeholder="email">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" >
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                </svg>
+            </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+    
+  <!-- ČÁRA -->
+    <div class="footer-line"></div>
+  
+    <div class="container-fluid px-4">
+    
+      <!-- SPODNÍ ŘÁDEK -->
+    <div class="footer-bottom">
+      <div>© 2026....</div>
+
+      <div class="social-icons">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+</body>
+</html>
