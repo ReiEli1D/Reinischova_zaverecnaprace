@@ -189,7 +189,7 @@ h2{
     justify-content: center;
 }
 
-.prev { left: -10px; } /* Mírně vykukují nebo jsou na kraji */
+.prev { left: -10px; }
 .next { right: -10px; }
 
 /* Rezervace Panel */
@@ -297,9 +297,9 @@ h2{
   content: "";
   position: absolute;
 
-  bottom: -1px;   /* přesně na šedou čáru */
+  bottom: -1px;   
   left: 0;
-  width: 100%;    /* přes celou šířku tabu */
+  width: 100%;    
 
   height: 2px;
   background: black;
@@ -329,7 +329,7 @@ h2{
 /* HORNÍ ŘADA */
 .row-top {
   display: grid;
-  grid-template-columns: 1fr 2.5fr; /* Fotka je menší (1/3 šířky) */
+  grid-template-columns: 1fr 2.5fr; 
   gap: 20px;
 }
 
@@ -367,7 +367,7 @@ h2{
 /* DOLNÍ ŘADA (NEWSLETTER + FORMULÁŘ) */
 .row-bottom {
   display: grid;
-  grid-template-columns: 1fr 2.5fr; /* Newsletter lícuje s fotkou nahoře */
+  grid-template-columns: 1fr 2.5fr; 
   gap: 20px;
 }
 
@@ -408,15 +408,15 @@ input, textarea {
 /*kde jsme section*/
 .kde-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Mapa je o něco širší než text */
+  grid-template-columns: 1fr 1.5fr;
   gap: 20px;
-  align-items: stretch; /* Obě karty budou stejně vysoké */
+  align-items: stretch; 
 }
 
 .kde-grid .info-card {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vycentruje text vertikálně */
+  justify-content: center; 
   gap: 30px;
 }
 
@@ -432,14 +432,14 @@ input, textarea {
 
 /* STYL MAPY */
 .map-card {
-  padding: 0 !important; /* Mapa vyplní celou kartu bez okrajů */
+  padding: 0 !important;
   overflow: hidden;
 }
 
 .map-placeholder {
   width: 890px;
   height: 400px;
-  min-height: 350px; /* Minimální výška na desktopu */
+  min-height: 350px; 
   background: #ccc;
   display: flex;
   align-items: center;
@@ -448,7 +448,7 @@ input, textarea {
 }
 
 
-/* ================= FAQ ================= */
+/* FAQ  */
 .faq-item{
   border-bottom:1px solid #aaa;
   padding:10px;
@@ -591,11 +591,11 @@ input, textarea {
   }
   /* KONTAKTY */
   .kontakt-grid {
-    grid-template-columns: 1fr; /* Jeden sloupec pod sebou */
+    grid-template-columns: 1fr; 
   }
 
   .contact-boxes {
-    flex-direction: column; /* Boxíky pod sebou */
+    flex-direction: column; 
   }
 
   .photo-container {
@@ -633,7 +633,7 @@ input, textarea {
     height: auto;
   }
 
-  /* ===== HERO ===== */
+  /*HERO */
   .hero {
     display: grid;
     grid-template-columns: 1fr;
@@ -653,7 +653,7 @@ input, textarea {
 
 
 
-  /* ===== RECENZE ===== */
+  /*RECENZE */
   .reviews {
     display: flex;
     flex-direction: column;
@@ -667,7 +667,7 @@ input, textarea {
     border-radius: 140px 140px 10px 10px;
   }
 
-  /* ===== TABS ===== */
+  /*TABS*/
   .tabs {
     flex-wrap: wrap;
     gap: 10px;
@@ -678,17 +678,17 @@ input, textarea {
     font-size: 14px;
   }
 
-  /* ===== KONTAKTY ===== */
+  /*KONTAKTY*/
   .section {
-    padding: 30px 20px; /* Menší padding na mobilech */
+    padding: 30px 20px; 
   }
   
   .form-row {
-    flex-direction: column; /* Inputy email a tel pod sebou na malém mobilu */
+    flex-direction: column; 
   }
 
   .btn-send {
-    width: 100%; /* Tlačítko na celou šířku */
+    width: 100%; 
   }
   /* NEWSLETTER */
   .newsletter {
@@ -731,7 +731,7 @@ input, textarea {
   }
 .kde-grid .info-card {
     padding: 20px;
-    text-align: center; /* Na malém mobilu text doprostřed */
+    text-align: center; 
   }
   
   .kontakt-grid > div > div[style*="display:flex"] {
@@ -758,7 +758,7 @@ input, textarea {
     width: 100%;
   }
 
-  /* ===== FOOTER ===== */
+  /*FOOTER*/
   .footer-top {
     flex-direction: column;
     align-items: flex-start;
