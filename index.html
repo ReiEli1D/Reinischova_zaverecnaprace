@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Šachové Muzeum</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+   --> <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#aktuality">Aktuality</a></li>
+        <li class="nav-item"><a class="nav-link" href="#vystavy">Výstavy</a></li>
+		<li class="nav-item"><a class="nav-link" href="#recenze">Recenze</a></li>
+      </ul>
+      <a class="navbar-brand mx-4 logo-circle" href="#home">
+        <img src="./pictures/chess_logo.png" alt="GrandMaster Logo" class="navbar-logo-img">
+      </a>
+      <ul class="navbar-nav align-items-center">
+        <!--<li class="nav-item"><a class="nav-link" href="#kontakt">O nás</a></li>-->
+		<li class="nav-item"><a class="nav-link" href="#kontakt" onclick="openTab('sekce-onas', this)">O nás</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontakt" onclick="openTab('sekce-napiste', this)">Kontakt</a></li>
+		<li class="nav-item"><a class="nav-link" href="#kontakt" onclick="openTab('sekce-faq', this)">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!--HERO SECTION-->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-style: normal; font-weight: 1400;">KRÁLOVSKÁ HRA <br><span>V SRDCI PRAHY</span></h1>
+    <p>Navštivte největší šachovou expozici v Evropě. Objevte příběhy mistrů od historie až po věk umělé inteligence.</p>
+    <a href="#rezervace" class="btn-hero">REZERVUJVTE VSTUP</a>
+  </div>
+  <div class="img_hero_box">
+      <div class="img_hero"><p id="odpocet"></p></div>
+  </div>
+</section>
+<!--HERO SECTION-->
+
+
+<dialog id="newsModal" class="news-modal">
+
+  <div class="news-modal-image" id="newsModalImage"></div>
+
+  <div class="news-modal-content">
+
+    <div class="news-modal-date" id="newsModalDate"></div>
+
+    <h2 id="newsModalTitle"></h2>
+
+    <p id="newsModalText"></p>
+
+    <button
+    onclick="closeNewsModal()"
+    class="btn btn-primary">
+      Zavřít článek
+    </button>
+
+  </div>
+
+</dialog>
+
+<!--AKTUALITY-->
+<section id="aktuality">
+  <h2 class="section-title" style="padding-top: 40px;">AKTUALITY</h2>
+  
+  <div class="aktuality-container">
+    
+    <div class="aktualita-item">
+      <div class="aktualita-foto" style="background-image: url('cesta-k-fotce1.jpg');"></div>
+      <div class="aktualita-text">
+        <h3>Výročí legendárního zápasu Kasparov vs. Deep Blue</h3>
+        <p>
+        Přijďte si připomenout historický okamžik,
+        který změnil budoucnost šachu i technologií.
+        </p> 
+<button
+onclick="openNewsModal(
+'Výročí legendárního zápasu Kasparov vs. Deep Blue',
+'14. května 2026',
+'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200',
+'V květnu si muzeum připomene ikonický souboj mezi Garrym Kasparovem a superpočítačem Deep Blue, který změnil pohled veřejnosti na umělou inteligenci i budoucnost technologií. Návštěvníci se mohou těšit na interaktivní projekce, historické fotografie, dobové záznamy zápasu a speciální digitální instalace mapující vývoj počítačového šachu. Součástí programu budou také přednášky o propojení šachu a moderní AI.'
+)"
+class="news-btn">
+Číst více
+</button>
+      </div>
+    </div>
+
+    <div class="aktualita-item reversed">
+      <div class="aktualita-foto" style="background-image: url('cesta-k-fotce2.jpg');"></div>
+      <div class="aktualita-text">
+        <h3>Noční prohlídky muzea</h3>
+        <p>
+        Speciální večerní komentované prohlídky
+        s atmosférickým osvětlením a živou hudbou.
+        </p>
+<button
+onclick="openNewsModal(
+'Noční prohlídky muzea',
+'2. června 2026',
+'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200',
+'Během letních měsíců muzeum otevírá své expozice i po setmění. Speciální večerní atmosféru doplní ambientní hudba, tematické osvětlení a komentované prohlídky zaměřené na nejzajímavější exponáty. Návštěvníci si budou moci prohlédnout historické šachové soupravy, digitální projekce i interaktivní instalace v unikátní noční atmosféře.'
+)"
+class="news-btn">
+Číst více</button>
+      </div>
+    </div>
+
+    <div class="aktualita-item reversed">
+      <div class="aktualita-foto" style="background-image: url('cesta-k-fotce3.jpg');"></div>
+      <div class="aktualita-text">
+        <h3>Festival moderní šachové grafiky</h3>
+        <p>
+        Nová výstava propojující současné umění,
+        digitální ilustraci a svět šachů.
+        </p>
+      <button
+onclick="openNewsModal(
+'Festival moderní šachové grafiky',
+'18. července 2026',
+'https://images.unsplash.com/photo-1544717305-2782549b5136?w=1200',
+'Nová výstava propojí současné digitální umění, ilustraci a svět šachu. Festival představí tvorbu mladých umělců z celé Evropy, kteří ve svých dílech kombinují strategii, symboliku a moderní vizuální styl. Součástí budou workshopy, živé digitální malování i speciální projekce velkoformátových grafik inspirovaných historií i budoucností šachu.'
+)"
+class="news-btn">
+Číst více
+</button>
+      </div>
+    </div>
+
+    <div class="aktualita-item">
+      <div class="aktualita-foto" style="background-image: url('cesta-k-fotce4.jpg');"></div>
+      <div class="aktualita-text">
+       <h3>Turnaj mladých mistrů</h3>
+        <p>
+        Celodenní šachový turnaj pro mladé hráče
+        z celé České republiky.
+        </p>
+        
+      <button
+onclick="openNewsModal(
+'Turnaj mladých mistrů',
+'4. srpna 2026',
+'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200',
+'Muzeum letos pořádá již pátý ročník turnaje mladých šachových talentů. Celodenní akce nabídne soutěžní partie, simultánku s profesionálním hráčem i speciální workshopy zaměřené na strategii a moderní šachové techniky. Návštěvníci se mohou těšit také na doprovodný program, interaktivní zóny a ocenění nejlepších hráčů.'
+)"
+class="news-btn">
+Číst více
+</button>
+      </div>
+    </div>
+
+    <div class="aktualita-item">
+      <div class="aktualita-foto" style="background-image: url('cesta-k-fotce1.jpg');"></div>
+      <div class="aktualita-text">
+        <h3>Restaurování historických figur</h3>
+        <p>
+        Nahlédněte do procesu obnovy
+        vzácných šachových exponátů.
+        </p>
+        <button
+onclick="openNewsModal(
+'Restaurování historických figur',
+'21. srpna 2026',
+'https://images.unsplash.com/photo-1580541832626-2a7131ee809f?w=1200',
+'Speciální výstava návštěvníkům představí zákulisí restaurování historických šachových souprav. Odborníci zde ukážou proces čištění, oprav i konzervace unikátních figurek pocházejících z různých období evropské historie. Součástí budou i ukázky původních materiálů, tradičních technik a interaktivní prezentace detailů jednotlivých exponátů.'
+)"
+class="news-btn">
+Číst více
+</button>
+      </div>
+    </div>
+
+    <div class="aktualita-item reversed">
+      <div class="aktualita-foto" style="background-image: url('cesta-k-fotce2.jpg');"></div>
+      <div class="aktualita-text">
+        <h3>Den otevřených dveří</h3>
+        <p>
+        Mimořádný vstup zdarma a speciální
+        program pro návštěvníky.
+        </p>
+              <button
+onclick="openNewsModal(
+'Den otevřených dveří',
+'12. září 2026',
+'https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1200',
+'Muzeum zve návštěvníky na speciální den otevřených dveří se vstupem zdarma. Během celého dne budou probíhat komentované prohlídky, tematické workshopy, ukázky historických šachových partií i interaktivní aktivity pro děti a rodiny. Součástí akce bude také večerní světelná instalace v hlavní galerii.'
+)"
+class="news-btn">
+Číst více
+</button>
+      </div>
+    </div>
+
+    </div>
+</section>
+
+<!-- Modální okno -->
+<dialog id="tailwindModal" class="modal-window">
+  <!-- Vnitřní kontejner -->
+  <div class="p-6">
+    <div class="flex justify-between items-center border-b pb-3 mb-4">
+      <h3 class="text-xl font-bold text-gray-800"><span id="m-title" class="font-semibold text-gray-900"></span></h3>
+    </div>
+
+    <div class="space-y-3">
+	  <p class="text-gray-600">Datum: <span id="m-name" class="font-semibold text-gray-900"></span></p>
+      <p class="text-gray-600">Popis: <span id="m-role" class="font-semibold text-gray-900"></span></p>
+    </div>
+
+    <div class="mt-6 flex justify-end">
+      <button onclick="closeModal()" class="btn btn-dark btn-sm">Zavřít</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Modální okno - rezervace -->
+<dialog id="tailwindModalRezervace" class="modal-window">
+  <!-- Vnitřní kontejner -->
+  <div class="p-6">
+    <div class="flex justify-between items-center border-b pb-3 mb-4">
+      <h3 class="text-xl font-bold text-gray-800">Rezervace</h3>
+    </div>
+
+    <div class="space-y-3">
+	  <p class="text-gray-600">
+		Akce:
+		<select name="typ_akce">
+		  <option value="a1">Dřevění obři</option>
+		  <option value="a2">Zlatá éra</option>
+		  <option value="a3">Počítačový věk</option>
+      <option value="a4">Historie šachů</option>
+		  <option value="a5">Šachová grafika</option>
+		  <option value="a6">Šachy a jejich budoucnost</option>
+		</select>
+	</p>
+
+	  <p class="text-gray-600">Datum:<input type="date" class="form-control mb-3"></p>
+	  <p class="text-gray-600">Čas: <input type="time" class="form-control mb-3"></p>
+	  <p class="text-gray-600">
+		Typ vstupenky:
+		<select name="typ_vstupenky">
+		  <option value="v1">Dospělí - 300 Kč</option>
+		  <option value="v2">Dítě - 150 Kč</option>
+		  <option value="v3">Rodinné vstupné (2 dospělí, 2 děti) - 500 Kč</option>
+		</select>
+	</p>
+  
+<div class="reservation-note">
+  Vstupné se hradí až na místě při příchodu do muzea.
+</div>
+	<div class="ticket-grid">
+
+  <div class="ticket-input">
+    <label>Dospělí</label>
+    <input type="number" min="0" value="1" class="form-ticket">
+  </div>
+
+  <div class="ticket-input">
+    <label>Děti</label>
+    <input type="number" min="0" value="0" class="form-ticket">
+  </div>
+
+  <div class="ticket-input">
+    <label>Studenti</label>
+    <input type="number" min="0" value="0" class="form-ticket">
+  </div>
+
+</div>
+
+  
+  <p class="text-gray-600">E-mail: <input type="email" class="form-control mb-3" id = "m-email"></p>
+	  <p class="text-gray-600">Telefon: <input type="tel" class="form-control mb-3"></p>
+    </div>
+
+    <div class="mt-6 flex justify-end">
+      <button onclick="closeModal2()" class="btn btn-dark btn-sm" style="width: 720px;">Odeslat</button>
+    </div>
+  </div>
+</dialog>
+
+
+<!--VÝSTAVY, CAROUSEL-->
+<section id="vystavy" class="section dark-bg">
+  <div class="container">
+    <div class="reservation-layout">
+      <div class="carousel-container">
+        <h2 class="section-title" style="color: whitesmoke;">VÝSTAVY</h2>
+        <div class="carousel-track" id="carouselTrack">
+
+		  <div class="carousel-card">
+    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=300')"></div>
+    <h4>Dřevění obři</h4>
+    <p>Obří venkovní sady.</p>
+
+    <button onclick="openTailwindModal(
+    'Dřevění obři',
+    'Od 11. března do 1. dubna 2026',
+    'Unikátní venkovní expozice obřích ručně vyřezávaných šachových figur z různých druhů dřeva. Návštěvníci si mohou prohlédnout historické herní sety inspirované středověkem a zároveň si vyzkoušet partii na nadrozměrné šachovnici pod širým nebem.'
+    )" class="btn btn-dark btn-sm">Více</button>
+</div>
+
+<div class="carousel-card">
+    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=300')"></div>
+    <h4>Zlatá éra</h4>
+    <p>Šachy v 19. století.</p>
+
+    <button onclick="openTailwindModal(
+    'Zlatá éra',
+    'Od 18. července do 1. srpna 2026',
+    'Výstava představuje období největšího rozmachu klasických šachů v 19. století. Objevte originální figurky, historické šachové hodiny i příběhy legendárních mistrů, kteří změnili dějiny této královské hry.'
+    )" class="btn btn-dark btn-sm">Více</button>
+</div>
+
+<div class="carousel-card">
+    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1580541832626-2a7131ee809f?w=300')"></div>
+    <h4>Počítačový věk</h4>
+    <p>Od Deep Blue k AI.</p>
+
+    <button onclick="openTailwindModal(
+    'Počítačový věk',
+    'Od 28. června do 8. srpna 2026',
+    'Interaktivní expozice mapující vývoj šachových technologií od prvních počítačových programů až po moderní umělou inteligenci. Součástí výstavy jsou ukázky legendárních partií Deep Blue, AlphaZero i současných AI systémů.'
+    )" class="btn btn-dark btn-sm">Více</button>
+</div>
+
+<div class="carousel-card">
+    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1560174038-da43ac74f01b?w=300')"></div>
+    <h4>Historie šachů</h4>
+    <p>Od počátků po současnost.</p>
+
+    <button onclick="openTailwindModal(
+    'Historie šachů',
+    'Od 15. května do 28. května 2026',
+    'Cesta historií šachu od starověké Indie přes perské a evropské královské dvory až po moderní turnaje. Výstava obsahuje vzácné historické figurky, dobové ilustrace a interaktivní časovou osu vývoje hry.'
+    )" class="btn btn-dark btn-sm">Více</button>
+</div>
+
+<div class="carousel-card">
+    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=300')"></div>
+    <h4>Noční prohlídky muzea</h4>
+    <p>Speciální večerní komentované prohlídky</p>
+
+    <button onclick="openTailwindModal(
+    'Šachová grafika',
+    'Od 2. května do 1. června 2026',
+    'Moderní i historická umělecká tvorba inspirovaná šachovou estetikou. Návštěvníci zde naleznou plakáty, ilustrace, digitální artworky i experimentální grafický design propojující strategii, geometrii a kreativitu.'
+    )" class="btn btn-dark btn-sm">Více</button>
+</div>
+
+<div class="carousel-card">
+    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1580541832626-2a7131ee809f?w=300')"></div>
+    <h4>Šachy a jejich budoucnost</h4>
+    <p>Budoucnost strategie a AI.</p>
+
+    <button onclick="openTailwindModal(
+    'Šachy a jejich budoucnost',
+    'Od 4. června do 28. června 2026',
+    'Futuristická výstava zaměřená na propojení šachu, virtuální reality a umělé inteligence. Prozkoumejte, jak mohou moderní technologie změnit způsob hraní, trénování i vnímání šachové strategie v následujících desetiletích.'
+    )" class="btn btn-dark btn-sm">Více</button>
+</div>
+
+		<!-- Příklad v PHP
+		<?php
+		$file = fopen('vystavy.csv', 'r');
+
+		foreach ($lines as $line)
+		{
+			$data[] = str_getcsv($line);
+
+			$div = '<div class="carousel-card">
+				<div class="card-img" style="background-image: url(\'$data[0]\')"></div>
+				<h4>' . $data[1] . '</h4>
+				<p>' . $data[2] . '.</p>
+				<button class="btn btn-dark btn-sm">Více</button>
+			</div>';
+
+			echo $div;
+		}
+		?>
+		-->
+
+        </div>
+      </div>
+
+      <div class="reservation-box" id="rezervace">
+        <h3>Rezervace</h3>
+        <p>Zajistěte si místo na prohlídce</p>
+        <input type="email" placeholder="e-mail" class="form-control mb-3" id = "email">
+
+         <button class="btn-gold w-100" onclick="tailwindModalRezervace(document.getElementById('email').value)">Přejít k rezervaci</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--RECENZE-->
+<section class="section_recenze" id="recenze">
+  <h2 class="section-title">RECENZE</h2>
+  <div class="reviews">
+    
+    <div class="review" style="background-image: url('./pictures/photo_review\ \(1\).jpg');">
+      <div class="review-content">
+        <h3>Alice K.</h3>
+        <p>"Krásné prostředí a fascinující historie šachových figur."</p>
+      </div>
+    </div>
+
+    <div class="review" style="background-image: url('./pictures/photo_review\ \(2\).jpg');">
+      <div class="review-content">
+        <h3>Erik T.</h3>
+        <p>"Nejlepší muzeum v Praze pro milovníky logických her."</p>
+      </div>
+    </div>
+
+    <div class="review" style="background-image: url('./pictures/photo_review\ \(3\).jpg');">
+      <div class="review-content">
+        <h3>Markéta S.</h3>
+        <p>"Nádherné exponáty a eventy. Nejlepší muzeum v Praze pro milovníky šachů."</p>
+      </div>
+    </div>
+
+    <div class="review" style="background-image: url('./pictures/photo_review\ \(4\).jpg');">
+      <div class="review-content">
+        <h3>Martin K.</h3>
+        <p>"Skvělý výklad průvodce a velmi inspirativní návštěva."</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="kontakt" class="section chess-dark-theme">
+  <div class="container">
+    
+    <!-- TABS MENU -->
+    <div class="tabs-custom-luxury mb-5">
+      <div class="tab-lux active" onclick="openTab('sekce-onas', this)">O NÁS</div>
+      <div class="tab-lux" onclick="openTab('sekce-napiste', this)">NAPIŠTE NÁM</div>
+      <div class="tab-lux" onclick="openTab('sekce-faq', this)">FAQ</div>
+    </div>
+
+    <!-- TAB: O NÁS (Fotka, Popis, Kontakty + Široká Mapa) -->
+  <div id="sekce-onas" class="tab-content active">
+    <div class="row g-4 mb-4">
+      <div class="col-lg-3">
+        <div class="team-photo-container h-100">
+          <img src="./pictures/aboutus_photo.jpg" class="img-fluid rounded shadow h-100 object-fit-cover" alt="Tým Muzea">
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="glass-card mb-4">
+          <h2 class="gold-tag">O NÁS</h2>
+          <p class="text-light">Jsme komunita milovníků šachu, která pečuje o odkaz této královské hry už přes 20 let. Naše sbírka obsahuje unikáty, které jinde v Evropě neuvidíte.</p>
+        </div>
+        <div class="contact-flex-row">
+          <div class="contact-square">
+            <span class="label">Email</span>
+            <span class="value">info@muzeum.cz</span>
+          </div>
+          <div class="contact-square">
+            <span class="label">Telefon</span>
+            <span class="value">+420 123 456 789</span>
+          </div>
+          <div class="contact-square">
+            <span class="label">Sociální sítě</span>
+          <div class="value-icons">
+              <div class="social_icons">
+                <a href="file:///D:/PRO_muzeum/index.html"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
+                <a href=""><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Spodní část: Široká Mapa a Adresa (přes celou šířku) -->
+  <div class="row">
+    <div class="col-12">
+      <div class="glass-card">
+        <h2 class="gold-tag">KDE NÁS NAJDETE</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <div class="ratio ratio-21x9 bg-dark border border-secondary rounded overflow-hidden mb-3 mb-lg-0">
+              <span class="text-muted d-flex align-items-center justify-content-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10239.823884304782!2d14.415617!3d50.0871112!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b959bc8e18d1b%3A0x11307d5b5aa8550c!2sStory%20of%20Prague%20Museum!5e0!3m2!1scs!2scz!4v1778532175423!5m2!1scs!2scz" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-4 ps-lg-5">
+            <div class="info-details">
+              <p class="mb-4 text-light h5"><strong>Adresa:</strong><br><span class="text-white-50">Křižovnické nám. 194/1, 110 00 Staré Město</span></p>
+              
+              <p class="mb-2 text-light h5"><strong>Otevírací doba:</strong></p>
+              <ul class="list-unstyled text-white-50 small mb-3">
+                <li class="d-flex justify-content-between"><span>Pondělí:</span> <span>10:00 – 18:00</span></li>
+                <li class="d-flex justify-content-between"><span>Úterý:</span> <span>10:00 – 18:00</span></li>
+                <li class="d-flex justify-content-between"><span>Středa:</span> <span>10:00 – 18:00</span></li>
+                <li class="d-flex justify-content-between"><span>Čtvrtek:</span> <span>10:00 – 18:00</span></li>
+                <li class="d-flex justify-content-between"><span>Pátek:</span> <span>10:00 – 18:00</span></li>
+                <li class="d-flex justify-content-between"><span>Sobota:</span> <span>10:00 – 20:00</span></li>
+                <li class="d-flex justify-content-between"><span>Neděle:</span> <span>10:00 – 18:00</span></li>
+              </ul>
+
+              <div class="holiday-warning">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-exclamation-triangle-fill me-2" viewBox="0 0 16 16">
+                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                O státních svátcích je muzeum uzavřeno.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <div class="chess-dark-theme">
+    <!-- TAB: NAPIŠTE NÁM + NEWSLETTER (Společně v jedné sekci) -->
+    <div id="sekce-napiste" class="tab-content" style="display:none;">
+      <div class="row g-4">
+        <!-- Newsletter (jako v původním návrhu) -->
+        <div class="col-lg-4">
+          <div class="glass-card h-100">
+            <h3 class="gold-tag">NÁŠ NEWSLETTER</h3>
+            <p class="text-white-50 small mb-4">Odebírejte novinky o turnajích a nových sbírkách.</p>
+            <input type="email" class="form-chess mb-3" placeholder="Váš e-mail">
+            <button class="btn-gold-chess w-100">ODESLAT</button>
+          </div>
+        </div>
+        <!-- Kontaktní formulář -->
+        <div class="col-lg-8">
+          <div class="glass-card h-100">
+            <h3 class="gold-tag">NAPIŠTE NÁM</h3>
+            <div class="row g-3">
+              <div class="col-md-6"><input type="email" class="form-chess" placeholder="Váš e-mail"></div>
+              <div class="col-md-6"><input type="tel" class="form-chess" placeholder="Váš telefon"></div>
+              <div class="col-12"><input type="text" class="form-chess" placeholder="Vaše jméno"></div>
+              <div class="col-12"><textarea class="form-chess" rows="4" placeholder="Vaše zpráva..."></textarea></div>
+              <div class="col-12 text-end"><button class="btn-gold-chess px-5">ODESLAT ZPRÁVU</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="chess-dark-theme">
+    <!-- TAB: FAQ -->
+    <div id="sekce-faq" class="tab-content" style="display:none;">
+  <div class="accordion" id="accordionFAQ">
+    
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          Jak funguje rezervace? 
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+        <div class="accordion-body">
+          Rezervace probíhá plně online přes náš rezervační systém. Po výběru termínu vám přijde potvrzovací e-mail s QR kódem.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          Jaká je otevírací doba?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+        <div class="accordion-body">
+          Otevřeno máme denně od 10:00 do 18:00, včetně víkendů a svátků.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+          Je muzeum vhodné pro děti?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+        <div class="accordion-body">
+          Ano, pro děti máme připravenou interaktivní zónu s obřími šachy a výukové tablety s šachovými hádankami.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<!--FOOTER-->
+<footer class="footer">
+  <div class="container-fluid px-4">
+    <div class="footer-top">
+      <div class="footer-menu">
+        <a href="#rezervace">Výstavy</a>
+        <a href="#aktuality">Aktuality</a>
+        <a href="#kontakt">O nás</a>
+        <a href="#kontakt">Kde jsme</a>
+      </div>
+      <div class="newsletter_footer">
+        <span>NEWSLETTER</span>
+        <div class="newsletter-box">
+          <input type="email" placeholder="email">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-line"></div>
+  <div class="container-fluid px-4">
+    <div class="footer-bottom">
+      <div>© 2026 GrandMaster Museum</div>
+      
+      <div class="social-icons">
+        <a href="file:///D:/PRO_muzeum/index.html"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"></a>
+        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png"></a>
+        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"></a>
+        <a href=""><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"></a>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="modal_window.js"></script>
+
+</body>
+</html>

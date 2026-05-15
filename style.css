@@ -1,0 +1,1550 @@
+:root {
+  --gold: #c5a059;
+  --dark: #1a1a1a;
+  --light: #f4f4f4;
+}
+
+h2{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); }
+
+/* NAVBAR */
+.logo-circle {
+  width: 45px; /* Trochu jsem ho zvětšil, aby logo vyniklo */
+  height: 45px; 
+  background: var(--gold);
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  text-decoration: none; 
+  overflow: hidden; /* Ořízne obrázek, kdyby byl moc velký */
+  transition: transform 0.3s ease;
+  padding: 0; 
+}
+
+.logo-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+}
+
+.navbar-logo-img {
+  width: 85%; 
+  height: auto;
+  display: block;
+   
+}
+.navbar{
+  background: rgba(169, 169, 169, 0.2) !important; 
+  backdrop-filter: blur(10px) !important; 
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
+  text-align: center !important;
+  color: #fff !important; 
+}
+
+/* HERO */
+.hero {
+  height: 80vh; 
+  background: var(--dark); 
+  color: white;
+  display: flex; 
+  align-items: center; 
+  padding: 8% 8%;
+  position: relative; 
+  overflow: hidden;
+}
+
+.hero-content { z-index: 2; max-width: 500px; }
+.hero h1 { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.5rem; 
+  line-height: 1.1; 
+}
+.hero h1 span { color: var(--gold); }
+.img_hero {
+  width: 100%; 
+  height: 100%; 
+  background: url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=800') center/cover;
+  border-radius: 30px; 
+  box-shadow: -20px 20px 0 var(--gold);
+}
+.img_hero_box { 
+  position: absolute;
+  right: 6%; /*odsazení*/ 
+  width: 40%; 
+  height: 80%; 
+}
+
+/*tlačitko*/
+.btn-hero {
+  display: inline-block;
+  position: relative;
+  padding: 16px 40px;
+  color: var(--gold); 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: transparent; 
+  border: 2px solid var(--gold);
+  border-radius: 4px; 
+  overflow: hidden;
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+
+.btn-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold); 
+  transition: all 0.4s ease;
+  z-index: -1; 
+}
+
+.btn-hero:hover {
+  color: #1a1a1a; 
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-hero:hover::before {
+  left: 0; /* Výplň přijede zleva */
+}
+
+/* Jemný odlesk na hraně */
+.btn-hero:active {
+  transform: translateY(0);
+}
+/* SECTION COMMON */
+.section { padding: 80px 5%; }
+.section-title { 
+  font-family: 'Playfair Display', serif; 
+  text-align: center; 
+  margin-bottom: 20px; 
+  font-size: 2.5rem; 
+}
+
+/*Modal okno - aktuality*/
+
+.news-modal {
+
+  width: min(850px, 94vw);
+
+  max-height: 92vh;
+
+  overflow-y: auto;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(28,28,28,0.98),
+      rgba(14,14,14,0.98)
+    );
+
+  color: white;
+
+  box-shadow:
+    0 30px 90px rgba(0,0,0,0.65),
+    0 0 0 1px rgba(255,255,255,0.05);
+
+  animation: modalOpen 0.4s ease;
+}
+
+/* BACKDROP */
+.news-modal::backdrop {
+
+  background: rgba(0,0,0,0.78);
+
+  backdrop-filter: blur(8px);
+}
+
+/* IMAGE */
+.news-modal-image {
+
+  width: 100%;
+
+  height: 320px;
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+
+.news-modal-image::after {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(15,15,15,1),
+      rgba(15,15,15,0.1)
+    );
+}
+
+/* CONTENT */
+.news-modal-content {
+
+  padding: 40px;
+}
+
+/* DATE */
+.news-modal-date {
+
+  color: var(--gold);
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  font-size: 0.82rem;
+
+  margin-bottom: 14px;
+}
+
+/* TITLE */
+.news-modal h2 {
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: 2.3rem;
+
+  margin-bottom: 22px;
+
+  line-height: 1.2;
+}
+
+/* TEXT */
+.news-modal p {
+
+  color: rgba(255,255,255,0.74);
+
+  line-height: 1.9;
+
+  font-size: 1rem;
+
+  margin-bottom: 30px;
+}
+
+/* BUTTON */
+.news-modal .btn {
+
+  border: none;
+
+  border-radius: 14px;
+
+  padding: 14px 28px;
+
+  background: var(--gold);
+
+  color: #111;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+.news-modal .btn:hover {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0cf8a,
+      #d6aa52
+    );
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 16px 35px rgba(197,160,89,0.35);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .news-modal-image {
+    height: 220px;
+  }
+
+  .news-modal-content {
+    padding: 28px;
+  }
+
+  .news-modal h2 {
+    font-size: 1.8rem;
+  }
+
+}
+/* =========================
+   NEWS BUTTON
+========================= */
+
+.news-btn {
+
+  margin-top: 22px;
+
+  background: transparent;
+
+  border: none;
+
+  color: var(--gold);
+
+  padding: 0;
+
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    gap 0.3s ease;
+
+  position: relative;
+}
+
+/* LINE */
+.news-btn::after {
+
+  content: "";
+
+  width: 40px;
+
+  height: 1px;
+
+  background: rgba(197,160,89,0.6);
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+/* HOVER */
+.news-btn:hover {
+
+  color: #f1d6a0;
+
+  gap: 16px;
+
+  transform: translateX(4px);
+}
+
+/* HOVER LINE */
+.news-btn:hover::after {
+
+  width: 60px;
+
+  background: #f1d6a0;
+}
+/* AKTUALITY */
+.aktuality-container {
+  box-sizing: border-box; /* Zabrání zúžení obsahu */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%; 
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 30px; 
+}
+#aktuality {
+  background-color: #eee; 
+  padding-bottom: 50px;    /* Tohle vytvoří prostor pod kartami bez ovlivnění jejich šířky */
+}
+
+.aktualita-item {
+  display: flex;
+  height: 160px; 
+  background: #f4f4f4;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.aktualita-foto {
+  width: 40%; 
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.aktualita-text {
+  width: 60%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aktualita-text h3 {
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.aktualita-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+}
+
+.aktualita-item.reversed {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .aktuality-container {
+    grid-template-columns: 1fr;
+  }
+}
+/*AKTUALITY*/
+
+/*Modal window vystavy*/
+
+.modal-window {
+  width: min(750px, 92%);
+  border: none;
+  border-radius: 28px;
+  padding: 0;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(32,32,32,0.98),
+      rgba(18,18,18,0.98)
+    );
+  color: white;
+  box-shadow:
+    0 25px 80px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(255,255,255,0.05);
+  animation: modalOpen 0.35s ease; /*Spusti animaci jménem modalOpen, která trvá 0.35 sekundy a pohybuje se plynule pomocí ease*/
+}
+
+/* BACKDROP */
+.modal-window::backdrop {
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
+}
+
+/* VNITŘNÍ OBSAH */
+.modal-window .p-6 {
+  padding: 45px;
+}
+
+/* HEADER */
+.modal-window .border-b {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+/* TITULEK */
+#m-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+  display: block;
+}
+
+/* TEXT */
+.modal-window p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 18px;
+}
+
+/* POPISKY */
+.modal-window p strong,
+.modal-window .text-gray-600 {
+  color: rgba(255,255,255,0.55) !important;
+  font-weight: 500;
+}
+
+/* HODNOTY */
+#m-name,
+#m-role {
+  color: white !important;
+  font-weight: 500;
+}
+
+/* TLAČÍTKO */
+.modal-window .btn {
+  background: var(--gold);
+  border: none;
+  color: black;
+
+  padding: 12px 30px;
+  border-radius: 12px;
+
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+.modal-window .btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(197,160,89,0.3);
+}
+
+/* SPACING */
+.modal-window .space-y-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ANIMACE */
+@keyframes modalOpen {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .modal-window {
+    width: 94%;
+    border-radius: 22px;
+  }
+
+  .modal-window .p-6 {
+    padding: 28px;
+  }
+
+  #m-title {
+    font-size: 1.6rem;
+  }
+
+}
+
+/* =========================
+   REZERVAČNÍ MODAL RESPONSIVE
+========================= */
+
+#tailwindModalRezervace {
+  width: min(820px, 94vw);
+
+  max-height: 92vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border: none;
+  border-radius: 30px;
+
+  padding: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(28,28,28,0.98),
+      rgba(14,14,14,0.98)
+    );
+
+  color: white;
+
+  box-shadow:
+    0 30px 90px rgba(0,0,0,0.65),
+    0 0 0 1px rgba(255,255,255,0.05);
+
+  animation: modalOpen 0.4s ease;
+}
+
+/* BACKDROP */
+#tailwindModalRezervace::backdrop {
+  background: rgba(0,0,0,0.78);
+  backdrop-filter: blur(8px);
+}
+
+/* SCROLLBAR */
+#tailwindModalRezervace::-webkit-scrollbar {
+  width: 8px;
+}
+
+#tailwindModalRezervace::-webkit-scrollbar-thumb {
+  background: rgba(197,160,89,0.5);
+  border-radius: 20px;
+}
+
+/* CONTENT */
+#tailwindModalRezervace .p-6 {
+  padding: 48px;
+}
+
+/* TITLE */
+#tailwindModalRezervace h2 {
+  font-family: 'Playfair Display', serif;
+
+  color: var(--gold);
+
+  font-size: 2.2rem;
+
+  margin-bottom: 10px;
+
+  line-height: 1.2;
+}
+
+/* SUBTITLE */
+.rez-subtitle {
+  color: rgba(255,255,255,0.65);
+
+  margin-bottom: 32px;
+
+  line-height: 1.7;
+
+  font-size: 0.95rem;
+}
+
+
+
+/* PLACEHOLDER */
+.form-ticket::placeholder {
+  color: rgba(255,255,255,0.42);
+}
+
+/* FOCUS */
+.form-ticket:focus {
+  outline: none;
+
+  border-color: rgba(197,160,89,0.75);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.04)
+    );
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 0 0 4px rgba(197,160,89,0.12),
+    0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* GRID */
+.ticket-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin: 28px 0;
+}
+
+/* INPUT GROUP */
+.ticket-input {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+.ticket-input label {
+  margin-bottom: 10px;
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 0.88rem;
+
+  letter-spacing: 1px;
+}
+
+/* INFO BOX */
+.reservation-note {
+  margin-top: 24px;
+
+  background: rgba(197,160,89,0.10);
+
+  border: 1px solid rgba(197,160,89,0.22);
+
+  padding: 18px 20px;
+
+  border-radius: 16px;
+
+  color: #f1d6a0;
+
+  line-height: 1.6;
+
+  font-size: 0.92rem;
+}
+
+/* BUTTON AREA */
+.modal-buttons {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 14px;
+
+  margin-top: 35px;
+
+  flex-wrap: wrap;
+}
+
+/* BUTTONS */
+#tailwindModalRezervace .btn {
+  border: none;
+
+  border-radius: 14px;
+
+  padding: 14px 26px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+/* PRIMARY */
+#tailwindModalRezervace .btn-primary {
+  background: var(--gold);
+
+  color: #111;
+}
+
+#tailwindModalRezervace .btn-primary:hover {
+  background: #e2bf79;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(197,160,89,0.3);
+}
+
+/* SECONDARY */
+#tailwindModalRezervace .btn-secondary {
+  background: rgba(255,255,255,0.08);
+
+  color: white;
+}
+
+#tailwindModalRezervace .btn-secondary:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+/* =========================
+   NOTEBOOK RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+  #tailwindModalRezervace {
+    width: min(760px, 95vw);
+  }
+
+  #tailwindModalRezervace .p-6 {
+    padding: 38px;
+  }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  #tailwindModalRezervace {
+    width: 96vw;
+
+    max-height: 94vh;
+
+    border-radius: 24px;
+  }
+
+  #tailwindModalRezervace .p-6 {
+    padding: 28px;
+  }
+
+  #tailwindModalRezervace h2 {
+    font-size: 1.8rem;
+  }
+
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+  }
+
+  #tailwindModalRezervace .btn {
+    width: 100%;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  #tailwindModalRezervace {
+    width: 100vw;
+
+    height: 100vh;
+
+    max-height: 100vh;
+
+    border-radius: 0;
+  }
+
+  #tailwindModalRezervace .p-6 {
+    padding: 22px;
+  }
+
+  #tailwindModalRezervace h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-ticket {
+    padding: 13px 15px;
+  }
+
+}
+
+
+/* CAROUSEL */
+.reservation-layout { display: grid; grid-template-columns: 3fr 1fr; gap: 30px; }
+.dark-bg { background: var(--dark); /* toto var(--dark) je z toho :root */ }
+
+
+.carousel-container {
+  padding: 20px 10px 10px;
+  border-radius: 32px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.10),
+      rgba(255,255,255,0.03)
+    );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  position: relative;
+}
+
+/* TRACK */
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  will-change: transform;
+}
+
+/* CARD */
+.carousel-card {
+  min-width: 280px;
+  max-width: 280px;
+
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 13px;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.03)
+    );
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
+  position: relative;
+  overflow: hidden;
+
+  flex-shrink: 0;
+}
+
+/* GLOW */
+.carousel-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(197,160,89,0.18),
+      transparent 45%
+    );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.carousel-card:hover::before {
+  opacity: 1;
+}
+
+/* HOVER */
+.carousel-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(197,160,89,0.45);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.35),
+    0 0 25px rgba(197,160,89,0.12);
+}
+
+/* IMAGE */
+.card-img {
+  height: 190px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* IMAGE OVERLAY */
+.card-img::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.45),
+      transparent 55%
+    );
+}
+
+/* TITLE */
+.carousel-card h4 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 1.4rem;
+  color: white;
+
+  margin-bottom: 10px;
+
+  letter-spacing: 0.5px;
+}
+
+/* TEXT */
+.carousel-card p {
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* BUTTON */
+.carousel-card .btn {
+  width: 100%;
+  margin-top: auto;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 11px 18px;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  background: var(--gold);
+
+  color: #111;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.carousel-card .btn:hover {
+  background: #e3c07a;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 22px rgba(197,160,89,0.35);
+}
+
+/* BUTTON ACTIVE */
+.carousel-card .btn:active {
+  transform: scale(0.98);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .carousel-container {
+    padding: 25px;
+  }
+
+  .carousel-card {
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  .card-img {
+    height: 160px;
+  }
+
+}
+
+/* RESERVATION BOX */
+.reservation-box {
+  padding: 30px; 
+  border-radius: 25px;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  
+  background: #c59f5985; 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  color: #fff;
+}
+.btn-gold {
+  
+  color: white; border: none; 
+  padding: 12px 25px;
+  border-radius: 10px; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: 0.3s;
+  
+  background: #1a1a1abe; 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  color: #fff;
+}
+.btn-gold:hover { background: var(--dark); transform: translateY(-2px); }
+
+
+
+/*Recenze*/
+.reviews {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 35px;
+  padding: 0 20px;
+  flex-wrap: wrap; /* Responzivita pro menší monitory */
+}
+.section_recenze{
+  background-color: #eee;
+  padding: 80px 5%;
+}
+.review {
+  width: 280px; 
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 140px 140px 20px 20px; 
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.review:hover {
+  transform: scale(1.03); 
+  box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3); 
+}
+
+/* Moderní poloprůhledný obdélník s textem */
+.review-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 15px;
+  margin-bottom: 25px;
+  /* Glassmorphism efekt: rozmazání pozadí za textem */
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  color: #fff; 
+}
+
+.review-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.review-content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+
+.review::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.4));
+  pointer-events: none;
+}
+
+
+/*ONAS/napiste nam/faq*/
+.chess-dark-theme {
+  background-color: var(--dark); 
+  padding: 60px 0;
+  color: white;
+}
+
+/* TÝMOVÁ FOTKA */
+.team-photo-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.team-photo-container {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.team-photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Zajistí, že fotka vyplní celou výšku vedle textu */
+}
+
+/* Úprava mapy pro široké zobrazení */
+.ratio-21x9 {
+  --bs-aspect-ratio: 45%; 
+}
+
+/* Zajištění stejné výšky u tabů a karet */
+.tab-content.active {
+  display: block !important;
+}
+
+/* Formátování textu v adrese */
+.info-details strong {
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.tabs-custom-luxury {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  border-bottom: 1px solid #222;
+}
+
+.tab-lux {
+  padding: 15px 30px;
+  cursor: pointer;
+  color: #555;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  position: relative;
+  text-transform: uppercase;
+}
+/* ANIMACE PRO TABY */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px); /* Mírný posun pro efekt vynoření */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Délka animace 0.4s */
+}
+
+.tab-content.active {
+  display: block !important;
+  opacity: 1;
+  transform: translateY(0);
+}
+.tab-lux.active {
+  color: var(--gold);
+}
+
+.tab-lux.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+}
+
+/* KARTY (Glass design) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--gold);
+}
+/* Seznam otevírací doby */
+.info-details ul li {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding: 4px 0;
+}
+
+.info-details ul li:last-child {
+  border-bottom: none;
+}
+
+/* Styl pro varování o svátcích */
+.holiday-warning {
+  background: rgba(197, 160, 89, 0.1); /* Jemný zlatý nádech */
+  border-left: 3px solid var(--gold);
+  padding: 10px 15px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  border-radius: 0 4px 4px 0;
+}
+
+.gold-tag {
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  display: block;
+  text-transform: uppercase;
+}
+
+/* KONTAKTNÍ BOXY  */
+.contact-flex-row {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-square {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #222;
+  padding: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.contact-square .modal-window {
+  opacity: 1;
+}
+
+.contact-square:hover {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-square .label {
+  font-size: 15px;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.contact-square .value {
+  font-size: 0.85rem;
+  color: white;
+  font-weight: 500;
+}
+.social_icons img { 
+  width: 30px; 
+  margin-left: 10px; 
+}
+
+
+.form-chess {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #333;
+  color: white;
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.form-chess:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.btn-gold-chess {
+  background: var(--gold);
+  color: black;
+  border: none;
+  padding: 12px 40px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.btn-gold-chess:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.faq-item{
+  border-bottom:1px solid #aaa;
+  padding:10px;
+}
+
+.faq-q{
+  display:flex;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.faq-a{display:none}
+
+.accordion-item {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid #222 !important;
+  color: white !important;
+}
+
+.accordion-button {
+  background-color: transparent !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+.accordion-button:not(.collapsed) {
+  background-color: rgba(197, 160, 89, 0.1) !important; /* Jemné zlaté pozadí při otevření */
+  color: var(--gold) !important;
+}
+
+.accordion-body {
+  background-color: rgba(255, 255, 255, 0.02);
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.accordion-button::after {
+  filter: invert(1); /* Otočí barvu šipky na bílou */
+}
+
+
+/* RESPONSIVITY */
+@media (max-width: 991px) {
+  .contact-flex-row { flex-direction: column; }
+  .tabs-custom-luxury { gap: 20px; }
+  .team-photo-container { margin-bottom: 30px; }
+}
+
+
+
+/* Omezí šířku tabů stejně jako O nás */
+#sekce-napiste,
+#sekce-faq {
+  max-width: 1150px;
+
+  margin: 0 auto;
+}
+
+
+/* NAPIŠTE NÁM */
+#sekce-napiste .glass-card {
+  border-radius: 24px;
+}
+
+/* Lepší spacing */
+#sekce-napiste .row,
+#sekce-faq .row {
+  margin: 0;
+}
+
+/* FAQ accordion */
+#sekce-faq .accordion {
+  margin-top: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+
+  #sekce-napiste,
+  #sekce-faq {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  #sekce-faq .glass-card,
+  #sekce-napiste .glass-card {
+    padding: 25px;
+  }
+
+}
+
+
+
+/* PŮVODNÍ FOOTER STYLY */
+.footer { 
+  background: #eee;
+  padding: 40px 20px 20px 20px; /* Snížil jsem poslední hodnotu (dolní padding) na 20px */
+  color: rgb(0, 0, 0); 
+}
+
+.footer-top { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+
+.footer-menu a { 
+  color: rgb(0, 0, 0); 
+  text-decoration: none; 
+  margin-right: 20px; 
+  font-weight: 500; 
+}
+
+.newsletter_footer { 
+  display: flex; 
+  align-items: center; 
+  gap: 15px; 
+}
+
+.newsletter-box { 
+  display: flex; 
+  background: rgb(0, 0, 0); 
+  border-radius: 5px; 
+  overflow: hidden; 
+}
+
+.newsletter-box input { 
+  border: 1px solid grey; 
+  padding: 8px; 
+  outline: none; 
+}
+
+.newsletter-box button { 
+  background: goldenrod; 
+  border: none; 
+  padding: 5px 15px; 
+  color: rgb(20, 26, 0); 
+}
+
+.footer-line { 
+  height: 1px; 
+  background: #333; 
+  margin: 20px 0; 
+}
+
+.footer-bottom { 
+  display: flex; 
+  justify-content: space-between; 
+  font-size: 14px; 
+  color: #595959;
+  padding-bottom: 0; /* Odstraň tu zápornou hodnotu -15px */
+  margin-bottom: 0;
+}
+
+.social-icons img { 
+  width: 20px; 
+  margin-left: 10px; 
+}
+
+@media (max-width: 992px) {
+  .reservation-layout { grid-template-columns: 1fr; }
+  .img_hero_box { display: none; }
+  .hero { text-align: center; }
+}
