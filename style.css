@@ -4,10 +4,21 @@
   --light: #f4f4f4;
 }
 
+h1{
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 50px;
+  margin-top: 110px;
+}
 h2{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: normal;
   font-weight: 900;
+}
+h3{
+  font-size: 40px;
+  font-family: fantasy;
 }
 body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); }
 
@@ -53,30 +64,31 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   color: white;
   display: flex; 
   align-items: center; 
-  padding: 8% 8%;
+  
   position: relative; 
   overflow: hidden;
 }
 
-.hero-content { z-index: 2; max-width: 500px; }
-.hero h1 { 
-  font-family: 'Playfair Display', serif; 
-  font-size: 3.5rem; 
-  line-height: 1.1; 
-}
+.hero-content { z-index: 2; max-width: 550px; padding-top: 40px; margin-left: 95px; }
+
 .hero h1 span { color: var(--gold); }
 .img_hero {
   width: 100%; 
   height: 100%; 
-  background: url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=800') center/cover;
+  background: url('./foto_hero.jpg') center/cover;
   border-radius: 30px; 
   box-shadow: -20px 20px 0 var(--gold);
+  position: relative;
 }
+
+
 .img_hero_box { 
   position: absolute;
-  right: 6%; /*odsazení*/ 
+  top: -2%;
+  right: -19%; /*odsazení*/ 
   width: 40%; 
   height: 80%; 
+ 
 }
 
 /*tlačitko*/
@@ -98,7 +110,10 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   transition: all 0.4s ease;
   z-index: 1;
 }
-
+.btn-hero a {
+  color: var(--gold);
+  text-decoration: none;
+}
 
 .btn-hero::before {
   content: '';
@@ -110,14 +125,19 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   background: var(--gold); 
   transition: all 0.4s ease;
   z-index: -1; 
+  color: var(--dark);
 }
 
 .btn-hero:hover {
+  color: var(--dark); 
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+  transform: translateY(-2px);
+}
+.btn-hero a:hover {
   color: #1a1a1a; 
   box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
   transform: translateY(-2px);
 }
-
 .btn-hero:hover::before {
   left: 0; /* Výplň přijede zleva */
 }
@@ -135,22 +155,107 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   font-size: 2.5rem; 
 }
 
+
+/*COUNTDOWN*/
+/* --- STYL PRO ODPOČET PŘES OBRÁZEK --- */
+
+/* Kontejner, ve kterém je fotka i odpočet */
+.img_hero_box {
+    position: relative; /* Důležité pro správné umístění odpočtu */
+    display: flex;
+    justify-content: center;
+}
+
+/* Hlavní box odpočtu */
+.countdown-container {
+    position: absolute;
+    bottom: 40px;          /* Vzdálenost od spodního okraje fotky */
+    left: 50%;
+    transform: translateX(-50%); /* Vycentrování na střed */
+    z-index: 10;
+    
+    /* Design (efekt skla) */
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(197, 160, 89, 0.3); /* Zlatý nádech */
+    text-align: center;
+    min-width: 280px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Nadpis uvnitř odpočtu */
+.countdown-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem !important;
+    color: var(--gold);
+    margin: 0 0 10px 0 !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Rozvržení čísel */
+.countdown-display {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.time-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50px;
+}
+
+/* Styl samotných čísel */
+.number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+}
+
+/* Styl popisků (Dny, Hodiny...) */
+.label {
+    font-size: 0.6rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+/* Responzivita pro mobily */
+@media (max-width: 576px) {
+    .countdown-container {
+        bottom: 20px;
+        min-width: 230px;
+        padding: 10px 15px;
+    }
+    
+    .number {
+        font-size: 1.4rem;
+    }
+    
+    .countdown-display {
+        gap: 10px;
+    }
+}
+
+
 /*Modal okno - aktuality*/
 
 .news-modal {
-
   width: min(850px, 94vw);
-
   max-height: 92vh;
-
   overflow-y: auto;
-
   padding: 0;
-
   border: none;
-
   border-radius: 30px;
-
   background:
     linear-gradient(
       145deg,
@@ -159,42 +264,31 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
     );
 
   color: white;
-
   box-shadow:
     0 30px 90px rgba(0,0,0,0.65),
     0 0 0 1px rgba(255,255,255,0.05);
-
-  animation: modalOpen 0.4s ease;
+  animation: modalOpen 0.4s ease;/*Spusti animaci jménem modalOpen, která trvá 0.35 sekundy a pohybuje se plynule pomocí ease*/
 }
 
 /* BACKDROP */
 .news-modal::backdrop {
-
   background: rgba(0,0,0,0.78);
-
   backdrop-filter: blur(8px);
 }
 
 /* IMAGE */
 .news-modal-image {
-
   width: 100%;
-
   height: 320px;
-
   background-size: cover;
   background-position: center;
-
   position: relative;
 }
 
 .news-modal-image::after {
-
   content: "";
-
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       to top,
@@ -205,79 +299,55 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 
 /* CONTENT */
 .news-modal-content {
-
   padding: 40px;
 }
 
 /* DATE */
 .news-modal-date {
-
   color: var(--gold);
-
   letter-spacing: 2px;
-
   text-transform: uppercase;
-
   font-size: 0.82rem;
-
   margin-bottom: 14px;
 }
 
 /* TITLE */
 .news-modal h2 {
-
   font-family: 'Playfair Display', serif;
-
   font-size: 2.3rem;
-
   margin-bottom: 22px;
-
   line-height: 1.2;
 }
 
 /* TEXT */
 .news-modal p {
-
   color: rgba(255,255,255,0.74);
-
   line-height: 1.9;
-
   font-size: 1rem;
-
   margin-bottom: 30px;
 }
 
 /* BUTTON */
 .news-modal .btn {
-
   border: none;
-
   border-radius: 14px;
-
   padding: 14px 28px;
-
   background: var(--gold);
-
   color: #111;
-
   font-weight: 700;
-
   transition: 0.3s ease;
 }
 
 /* HOVER */
 .news-modal .btn:hover {
-
   background:
     linear-gradient(
       135deg,
       #f0cf8a,
       #d6aa52
     );
-
   transform:
     translateY(-3px);
-
   box-shadow:
     0 16px 35px rgba(197,160,89,0.35);
 }
@@ -298,55 +368,34 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   }
 
 }
-/* =========================
-   NEWS BUTTON
-========================= */
 
+/* AKTUALITY BUTTON*/
 .news-btn {
-
   margin-top: 22px;
-
   background: transparent;
-
   border: none;
-
   color: var(--gold);
-
   padding: 0;
-
   font-size: 0.92rem;
-
   font-weight: 600;
-
   letter-spacing: 1px;
-
   text-transform: uppercase;
-
   display: inline-flex;
-
   align-items: center;
-
   gap: 10px;
-
   transition:
     color 0.3s ease,
     transform 0.3s ease,
     gap 0.3s ease;
-
   position: relative;
 }
 
 /* LINE */
 .news-btn::after {
-
   content: "";
-
   width: 40px;
-
   height: 1px;
-
   background: rgba(197,160,89,0.6);
-
   transition:
     width 0.3s ease,
     background 0.3s ease;
@@ -354,19 +403,14 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 
 /* HOVER */
 .news-btn:hover {
-
   color: #f1d6a0;
-
   gap: 16px;
-
   transform: translateX(4px);
 }
 
 /* HOVER LINE */
 .news-btn:hover::after {
-
   width: 60px;
-
   background: #f1d6a0;
 }
 /* AKTUALITY */
@@ -400,7 +444,25 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   background-position: center;
   flex-shrink: 0;
 }
+.news-card .btn-primary {
+    background-color: transparent;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: 0; /* Čtvercový, šachový vzhled */
+    padding: 10px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+}
 
+.news-card .btn-primary:hover {
+    background-color: var(--gold);
+    color: var(--dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
 .aktualita-text {
   width: 60%;
   padding: 15px;
@@ -509,13 +571,10 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   background: var(--gold);
   border: none;
   color: black;
-
   padding: 12px 30px;
   border-radius: 12px;
-
   font-weight: 700;
   letter-spacing: 1px;
-
   transition: 0.3s ease;
 }
 
@@ -564,36 +623,26 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 
 }
 
-/* =========================
-   REZERVAČNÍ MODAL RESPONSIVE
-========================= */
+/*MODAL WINDOW REZERVACE */
 
 #tailwindModalRezervace {
   width: min(820px, 94vw);
-
   max-height: 92vh;
-
   overflow-y: auto;
   overflow-x: hidden;
-
   border: none;
   border-radius: 30px;
-
   padding: 0;
-
   background:
     linear-gradient(
       145deg,
       rgba(28,28,28,0.98),
       rgba(14,14,14,0.98)
     );
-
   color: white;
-
   box-shadow:
     0 30px 90px rgba(0,0,0,0.65),
     0 0 0 1px rgba(255,255,255,0.05);
-
   animation: modalOpen 0.4s ease;
 }
 
@@ -621,28 +670,26 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 /* TITLE */
 #tailwindModalRezervace h2 {
   font-family: 'Playfair Display', serif;
-
   color: var(--gold);
-
   font-size: 2.2rem;
-
   margin-bottom: 10px;
-
   line-height: 1.2;
 }
 
 /* SUBTITLE */
 .rez-subtitle {
   color: rgba(255,255,255,0.65);
-
   margin-bottom: 32px;
-
   line-height: 1.7;
-
   font-size: 0.95rem;
 }
-
-
+.odkaz_hero a{
+  color: #c5a059; 
+  text-decoration: none;
+}
+.odkaz_hero a:hover{
+  color: #1a1a1a;
+}
 
 /* PLACEHOLDER */
 .form-ticket::placeholder {
@@ -650,20 +697,16 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 }
 
 /* FOCUS */
-.form-ticket:focus {
+.form-ticket:focus { 
   outline: none;
-
   border-color: rgba(197,160,89,0.75);
-
   background:
     linear-gradient(
       145deg,
       rgba(255,255,255,0.08),
       rgba(255,255,255,0.04)
     );
-
   transform: translateY(-1px);
-
   box-shadow:
     0 0 0 4px rgba(197,160,89,0.12),
     0 8px 20px rgba(0,0,0,0.2);
@@ -671,15 +714,11 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 
 
 
-
 /* GRID */
 .ticket-grid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 18px;
-
   margin: 28px 0;
 }
 
@@ -692,73 +731,62 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 /* LABEL */
 .ticket-input label {
   margin-bottom: 10px;
-
   color: rgba(255,255,255,0.72);
-
   font-size: 0.88rem;
-
   letter-spacing: 1px;
 }
 
+.form-ticket{
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    color: white;
+    border-radius: 0;
+    padding: 12px;
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
 /* INFO BOX */
 .reservation-note {
   margin-top: 24px;
-
   background: rgba(197,160,89,0.10);
-
   border: 1px solid rgba(197,160,89,0.22);
-
   padding: 18px 20px;
-
   border-radius: 16px;
-
   color: #f1d6a0;
-
   line-height: 1.6;
-
   font-size: 0.92rem;
 }
 
 /* BUTTON AREA */
 .modal-buttons {
   display: flex;
-
   justify-content: flex-end;
-
   gap: 14px;
-
   margin-top: 35px;
-
   flex-wrap: wrap;
 }
 
 /* BUTTONS */
 #tailwindModalRezervace .btn {
   border: none;
-
   border-radius: 14px;
-
   padding: 14px 26px;
-
   font-weight: 700;
-
   letter-spacing: 1px;
-
   transition: 0.3s ease;
 }
 
 /* PRIMARY */
 #tailwindModalRezervace .btn-primary {
   background: var(--gold);
-
   color: #111;
 }
 
 #tailwindModalRezervace .btn-primary:hover {
   background: #e2bf79;
-
   transform: translateY(-2px);
-
   box-shadow:
     0 12px 28px rgba(197,160,89,0.3);
 }
@@ -766,7 +794,6 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 /* SECONDARY */
 #tailwindModalRezervace .btn-secondary {
   background: rgba(255,255,255,0.08);
-
   color: white;
 }
 
@@ -774,9 +801,7 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   background: rgba(255,255,255,0.14);
 }
 
-/* =========================
-   NOTEBOOK RESPONSIVE
-========================= */
+/* Responzive notebook*/
 
 @media (max-width: 1200px) {
 
@@ -790,17 +815,13 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 
 }
 
-/* =========================
-   TABLET
-========================= */
+/* TABLET */
 
 @media (max-width: 768px) {
 
   #tailwindModalRezervace {
     width: 96vw;
-
-    max-height: 94vh;
-
+   max-height: 94vh;
     border-radius: 24px;
   }
 
@@ -826,19 +847,14 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBIL */
 
 @media (max-width: 480px) {
 
   #tailwindModalRezervace {
     width: 100vw;
-
     height: 100vh;
-
     max-height: 100vh;
-
     border-radius: 0;
   }
 
@@ -893,33 +909,25 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 .carousel-card {
   min-width: 280px;
   max-width: 280px;
-
   min-height: 400px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   padding: 13px;
   border-radius: 24px;
-
   background:
     linear-gradient(
       180deg,
       rgba(255,255,255,0.08),
       rgba(255,255,255,0.03)
     );
-
   border: 1px solid rgba(255,255,255,0.08);
-
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease,
     border-color 0.35s ease;
-
   position: relative;
   overflow: hidden;
-
   flex-shrink: 0;
 }
 
@@ -946,9 +954,8 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 /* HOVER */
 .carousel-card:hover {
   transform: translateY(-8px);
-
-  border-color: rgba(197,160,89,0.45);
-
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.08);
   box-shadow:
     0 18px 40px rgba(0,0,0,0.35),
     0 0 25px rgba(197,160,89,0.12);
@@ -968,10 +975,8 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 /* IMAGE OVERLAY */
 .card-img::after {
   content: "";
-
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       to top,
@@ -982,13 +987,10 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 
 /* TITLE */
 .carousel-card h4 {
-  font-family: 'Playfair Display', serif;
 
   font-size: 1.4rem;
   color: white;
-
   margin-bottom: 10px;
-
   letter-spacing: 0.5px;
 }
 
@@ -1004,22 +1006,15 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 .carousel-card .btn {
   width: 100%;
   margin-top: auto;
-
   border: none;
   border-radius: 12px;
-
   padding: 11px 18px;
-
   font-size: 0.78rem;
   font-weight: 700;
-
   letter-spacing: 1.5px;
   text-transform: uppercase;
-
   background: var(--gold);
-
   color: #111;
-
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -1029,9 +1024,7 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 /* BUTTON HOVER */
 .carousel-card .btn:hover {
   background: #e3c07a;
-
   transform: translateY(-2px);
-
   box-shadow:
     0 10px 22px rgba(197,160,89,0.35);
 }
@@ -1056,10 +1049,10 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   .card-img {
     height: 160px;
   }
-
 }
 
 /* RESERVATION BOX */
+
 .reservation-box {
   padding: 30px; 
   border-radius: 25px;
@@ -1074,23 +1067,57 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   text-align: center;
   color: #fff;
 }
-.btn-gold {
-  
-  color: white; border: none; 
-  padding: 12px 25px;
-  border-radius: 10px; 
-  font-weight: 600; 
-  cursor: pointer; 
-  transition: 0.3s;
-  
-  background: #1a1a1abe; 
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  text-align: center;
-  color: #fff;
+
+/* Nadpis v boxu */
+.reservation-box h3 {
+    color: var(--light) !important;
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    margin-bottom: 20px !important;
+    margin-top: 0 !important;
 }
-.btn-gold:hover { background: var(--dark); transform: translateY(-2px); }
+
+/* Popisek v boxu */
+.reservation-box p {
+    color: #ffffff !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Vstupní pole (input) */
+.reservation-box .form-control {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(197, 160, 89, 0.4) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto 20px auto !important;
+}
+
+/* Tlačítko v rezervaci */
+.btn-gold {
+    background-color: var(--gold) !important;
+    color: var(--dark) !important;
+    border: none !important;
+    padding: 14px 30px !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn-gold:hover {
+    background-color: #d4b375 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
 
 
 
@@ -1171,7 +1198,7 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 /*ONAS/napiste nam/faq*/
 .chess-dark-theme {
   background-color: var(--dark); 
-  padding: 60px 0;
+    padding: 50px 0;
   color: white;
 }
 
@@ -1234,6 +1261,7 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   opacity: 0;
   transform: translateY(10px); /* Mírný posun pro efekt vynoření */
   transition: opacity 0.4s ease, transform 0.4s ease; /* Délka animace 0.4s */
+  justify-content: center;
 }
 
 .tab-content.active {
@@ -1302,16 +1330,12 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 }
 
 /* KONTAKTNÍ BOXY  */
-.contact-flex-row {
-  display: flex;
-  gap: 20px;
-}
+
 
 .contact-square {
   flex: 1;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid #222;
-  padding: 50px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1380,10 +1404,7 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
   transform: translateY(-3px);
 }
 
-.faq-item{
-  border-bottom:1px solid #aaa;
-  padding:10px;
-}
+
 
 .faq-q{
   display:flex;
@@ -1420,39 +1441,92 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 }
 
 
+.glass-card{
+    padding: 28px;
+}
+
+.contact-square{
+    padding: 28px;
+}
+
+.contact-flex-row{
+    gap: 14px;
+    display: flex;
+}
+.write-dark-theme{
+  background-color: var(--dark);
+}
+.faq-dark-theme{
+  background-color: var(--dark);
+}
+/* formulář */
+.form-chess{
+    margin-top: 12px;
+}
+
+/* FAQ accordion */
+.accordion{
+    margin-top: 15px;
+}
+
+/* texty uvnitř */
+.glass-card p{
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* headings */
+.glass-card h3{
+    margin-bottom: 18px;
+}
+
+#sekce-faq, 
+#sekce-napiste {
+  padding: 40px 0 !important; 
+}
+
+
+#sekce-faq ,
+#sekce-napiste .glass-card {
+  padding: 25px !important; 
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* FAQ položky blíž u sebe */
+.faq-item {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+#sekce-napiste .form-control {
+  margin-bottom: 12px; 
+}
+
 /* RESPONSIVITY */
 @media (max-width: 991px) {
   .contact-flex-row { flex-direction: column; }
   .tabs-custom-luxury { gap: 20px; }
   .team-photo-container { margin-bottom: 30px; }
 }
-
-
-
-/* Omezí šířku tabů stejně jako O nás */
-#sekce-napiste,
-#sekce-faq {
-  max-width: 1150px;
-
-  margin: 0 auto;
+#sekce-napiste h2 {
+  margin-bottom: 20px; /* Menší mezera pod nadpisem */
 }
-
-
 /* NAPIŠTE NÁM */
 #sekce-napiste .glass-card {
   border-radius: 24px;
 }
-
-/* Lepší spacing */
 #sekce-napiste .row,
 #sekce-faq .row {
   margin: 0;
 }
-
 /* FAQ accordion */
-#sekce-faq .accordion {
-  margin-top: 25px;
-}
 
 /* RESPONSIVE */
 @media (max-width: 1200px) {
@@ -1465,12 +1539,14 @@ body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--light); 
 }
 
 @media (max-width: 768px) {
-
   #sekce-faq .glass-card,
   #sekce-napiste .glass-card {
-    padding: 25px;
+    padding: 20px; /* Ještě menší odsazení pro mobilní telefony */
   }
-
+  
+  h2 {
+    font-size: 28px; /* Trochu zmenšíme nadpisy, aby nezabíraly tolik místa */
+  }
 }
 
 

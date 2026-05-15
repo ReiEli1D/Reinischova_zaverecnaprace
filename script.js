@@ -80,29 +80,32 @@ function openTab(id, el) {
 }
 
 //COUNTDOWN
-var countDownDate = new Date("Jun 5, 2026 15:37:25").getTime();
+// Nastavení data (zkontroluj, zda je v budoucnu!)
+var countDownDate = new Date("May 19, 2026 08:00:00").getTime();
 
 var x = setInterval(function() {
-
-  // Get today's date and time
   var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
   var distance = countDownDate - now;
 
-  // Time calculations for days, hours, minutes and seconds
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Display the result in the element with id="demo"
-  document.getElementById("odpocet").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  // KONTROLA: Zapisuj pouze pokud elementy existují
+  const dEl = document.getElementById("days");
+  const hEl = document.getElementById("hours");
+  const mEl = document.getElementById("minutes");
+  const sEl = document.getElementById("seconds");
 
-  // If the count down is finished, write some text
+  if (dEl) dEl.innerText = days.toString().padStart(2, '0');
+  if (hEl) hEl.innerText = hours.toString().padStart(2, '0');
+  if (mEl) mEl.innerText = minutes.toString().padStart(2, '0');
+  if (sEl) sEl.innerText = seconds.toString().padStart(2, '0');
+
+  // Pokud odpočet vyprší
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("odpocet").innerHTML = "EXPIRED";
+    if (dEl) dEl.closest('.countdown-container').innerHTML = "VÝSTAVA ZAČALA!";
   }
 }, 1000);

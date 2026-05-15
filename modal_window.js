@@ -4,12 +4,16 @@ const titleEl = document.getElementById('m-title');
 const nameEl = document.getElementById('m-name');
 const roleEl = document.getElementById('m-role');
 const emailEl = document.getElementById('m-email');
+const categoryEl = document.getElementById('m-category');
 
-function openTailwindModal(title, name, role) {
+
+
+function openTailwindModal(title, name, role, category) {
   // Naplnění dat
   titleEl.textContent = title;
   nameEl.textContent = name;
   roleEl.textContent = role;
+  categoryEl.textContent = category;
   
   // Zobrazení (prohlížeč se postará o zbytek)
   modal.showModal();
